@@ -8,12 +8,14 @@ import { TelaInicialModule } from './tela-inicial/tela-inicial.module';
 import { CarroModule } from './carro/carro.module';
 import { NavComponent } from './nav/nav.component';
 import { NavModule } from './nav/nav.module';
+import { CarroComponent } from './carro/carro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TelaInicialComponent,
-    NavComponent, 
+    NavComponent,
+    CarroComponent
   ],
   imports: [
     BrowserModule,

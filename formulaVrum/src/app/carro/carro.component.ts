@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 interface Carro{
   nome: string
   preco: number
@@ -17,7 +17,8 @@ interface Carro{
   styleUrls: ['./carro.component.css']
 })
 export class CarroComponent implements OnInit {
-  carros: Carro[] = [];
+  @Input() carros: any[] = [];
+  @Output() carrosChanged: EventEmitter<Carro[]> = new EventEmitter<Carro[]>();
   constructor() { }
 
   ngOnInit(): void {
@@ -34,23 +35,28 @@ export class CarroComponent implements OnInit {
   
   adicionarCarro() {
     const novoCarro: Carro = {
-      nome: 'Modelo X',
-      preco: 80000,
-      combustivel: 'Gasolina',
-      ipva: 1500,
+      nome: 'Chevrolet Tracker AT 1.0', 
+      preco: 113267,
+      combustivel: 'Flex',
+      ipva: 4531,
       categoria: 'SUV',
       lugares: 5,
-      tracao: '4x2',
-      cambio: 'Automático',
-      consumoUrbano: '10 km/l',
-      consumoRodoviario: '15 km/l',
+      tracao: 'Dianteira',
+      cambio: 'Automático de 6 marchas',
+      consumoUrbano: '7,8 km/L (A) 11,2 km/L (G)',
+      consumoRodoviario: '9,6 km/L (A) 13,6 km/L (G)'
+  
     };
   // Adiciona o novo carro à lista
   this.carros.push(novoCarro);
-
+  this.carrosChanged.emit(this.carros);
   // Salva a lista atualizada no localStorage
   localStorage.setItem('carros', JSON.stringify(this.carros));
+  console.log(this.carros)
+
+
   }
+
 
 
 }

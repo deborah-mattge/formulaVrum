@@ -7,13 +7,13 @@
 </head>
 <body>
     <div id="geral">    
-    <div class="flex justify-content-center " id="container-img"> 
+    <div class="flex justify-center" id="container-img"> 
     <img [src]="'/assets/logo.png'">
     </div>
    
     <div class="marcas">
         <div class="titulo-marcas">
-            <h1 class="underline">Principais Marcas</h1>
+            <h1 class="text-5xl m-8 font-bold text-rose-900		">Principais Marcas</h1>
         </div>
         <div class="logo-marcas">
             <div class="imagem-marca">
@@ -60,8 +60,13 @@
             <label><input type="checkbox">Mais de R$120.000</label>
         </div>
         <div class="container-lista-carro">
+            <div *ngFor="let carro of carros">
+                <h3>{{ carro.nome }}</h3>           </div>
           
         </div>
+        <button (click)="mostrar()">mostrar carro</button>
+        <app-carro (carrosChanged)="carros"></app-carro>       
+
     </div>
 </div>
 </body>
