@@ -8,7 +8,7 @@
 <body>
     <div id="geral">    
     <div class="flex justify-center" id="container-img"> 
-    <img [src]="'/assets/logo.png'">
+        <img [src]="'/assets/logo.png'">
     </div>
    
     <div class="marcas">
@@ -44,7 +44,7 @@
         </div>
     </div>
     
-    <div class="container-conteudo">
+    <div class="flex">
         <div class="container-filtro">
             <h2>Filtros</h2>
             <h3>Categorias</h3>
@@ -59,13 +59,32 @@
             <label><input type="checkbox">Até R$120.000</label>
             <label><input type="checkbox">Mais de R$120.000</label>
         </div>
-        <div class="container-lista-carro">
-            <div *ngFor="let carro of carros">
-                <h3>{{ carro.nome }}</h3>           </div>
+        <div class="flex-wrap ml-10">
+            <div class="flex">
+                <div *ngFor="let carro of carros" class="bg-[#F2F2F2] rounded-lg m-5 p-3 shadow-xl w-60">
+                    <div class="p-1">
+                    <div class="bg-white w-full h-44 "></div>
+                    <h1 class="mt-3">{{carro.marca}}</h1> 
+                    <h1 class="font-bold text-lg">{{carro.nome}}</h1>
+                    <div class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs m-1">
+                        <h3>{{carro.categoria}}</h3>
+                    </div>
+                    <div class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs m-1">
+                        <h3>{{carro.combustivel}}</h3>
+                    </div>
+                    <div class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs">
+                        <h3>{{carro.cambio}}</h3>
+                    </div>
+                    <div class="flex items-center mt-10">
+                        <h2 class="font-extrabold text-red-900 text-lg mr-1"> Valor:</h2> <h2 class="mt-1">{{carro.preco | currency: 'BRL'}}</h2> 
+                    </div>
+                    <button class="bg-red-900 text-white rounded-lg w-full mt-2">ver mais</button>
+                </div>
+            </div>
+        
+            </div>
           
         </div>
-        <button (click)="mostrar()">mostrar carro</button>
-        <app-carro (carrosChanged)="carros"></app-carro>       
 
     </div>
 </div>

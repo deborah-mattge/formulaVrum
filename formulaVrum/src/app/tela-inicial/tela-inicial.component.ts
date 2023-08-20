@@ -7,19 +7,17 @@ import { CarroComponent } from '../carro/carro.component';
   styleUrls: ['./tela-inicial.component.css']
 })
 export class TelaInicialComponent implements OnInit {
-  @Input() carros: any[] = [];
+  carros: any[]=[]
 
   constructor() { }
 
   ngOnInit(): void {
+    const carrosNoLocalStorage = localStorage.getItem('carros');
+    if (carrosNoLocalStorage) {
+      this.carros = JSON.parse(carrosNoLocalStorage);
+    }
     console.log(this.carros)
 
-  }
-  mostrar(){
-    console.log(this.carros)
-  }
-  atualizarCarros(novosCarros: any[]) {
-    this.carros = novosCarros;
   }
 
 }
