@@ -78,7 +78,14 @@
                     <div class="flex items-center mt-10">
                         <h2 class="font-extrabold text-red-900 text-lg mr-1"> Valor:</h2> <h2 class="mt-1">{{carro.preco | currency: 'BRL'}}</h2> 
                     </div>
-                    <button class="bg-red-900 text-white rounded-lg w-full mt-2">ver mais</button>
+                    <button class="bg-red-900 text-white rounded-lg w-full mt-2" (click)="modal.toggle()">ver mais</button>
+                    <app-carro #modal>
+                        {{ carro.nome }} - R$ {{ carro.preco }}
+                        {{carro.combustivel}} {{carro.ipva}}
+                        {{carro.categoria}}{{carro.lugares}} 
+                        {{carro.tracao}}{{carro.cambio}}
+                        {{carro.consumoUrbano}}{{carro.consumoRodoviario}}
+                    </app-carro> 
                 </div>
             </div>
         
@@ -88,5 +95,8 @@
 
     </div>
 </div>
+
+  
+
 </body>
 </html>

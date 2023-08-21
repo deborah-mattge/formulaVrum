@@ -5,7 +5,8 @@ import { BrowserModule } from '@angular/platform-browser'
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     CarroModule,

@@ -1,8 +1,9 @@
-<button (click)="adicionarCarro()">Adicionar Carro</button>  <li *ngFor="let carro of carros">
-    {{ carro.nome }} - R$ {{ carro.preco }}
-    {{carro.combustivel}} {{carro.ipva}}
-    {{carro.categoria}}{{carro.lugares}} 
-    {{carro.tracao}}{{carro.cambio}}
-    {{carro.consumoUrbano}}{{carro.consumoRodoviario}}
-  </li>
+<!-- <button (click)="adicionarCarro()">Adicionar Carro</button>   -->
 
+<ng-container *ngIf="mostrar">
+  <div class="modal">
+    <ng-content></ng-content>
+  </div>
+  <div (click)="toggle()"
+       class="overlay"></div>
+</ng-container>
