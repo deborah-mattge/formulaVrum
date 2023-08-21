@@ -34,7 +34,7 @@ export class CarroComponent implements OnInit {
     },
     {
       nome: ' Cruze LT 1.4 Turbo',
-      marca: 'Chevrolet',
+      marca: 'Fiat',
       preco: 142665 ,
       combustivel: 'Flex',
       ipva: 5707,

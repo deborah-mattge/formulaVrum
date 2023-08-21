@@ -7,6 +7,7 @@ import { TelaInicialModule } from './tela-inicial/tela-inicial.module';
 import { CarroModule } from './carro/carro.module';
 import { NavComponent } from './nav/nav.component';
 import { NavModule } from './nav/nav.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavModule } from './nav/nav.module';
     AppRoutingModule,
     TelaInicialModule, 
     CarroModule, 
-    NavModule
+    NavModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
