@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CarroComponent } from '../carro/carro.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-tela-inicial',
@@ -20,4 +21,9 @@ export class TelaInicialComponent implements OnInit {
 
   }
 
+  marcas(marca: string){
+    const carrosFiltrados = this.carros.filter(carro => carro.marca === marca);
+    console.log(carrosFiltrados);
+  }
 }
+

@@ -16,10 +16,10 @@
             <h1 class="text-5xl m-8 font-bold text-rose-900		">Principais Marcas</h1>
         </div>
         <div class="logo-marcas">
-            <div class="imagem-marca">
+            <div class="imagem-marca" (click)="marcas('volks')">
                 <img [src]="'/assets/volks.png'" class="w-7" >
             </div>
-            <div class="imagem-marca">
+            <div class="imagem-marca" (click)="marcas('Chevrolet')">
                 <img [src]="'/assets/Chevrolet.png'" class="w-8">
 
             </div>
@@ -79,12 +79,24 @@
                         <h2 class="font-extrabold text-red-900 text-lg mr-1"> Valor:</h2> <h2 class="mt-1">{{carro.preco | currency: 'BRL'}}</h2> 
                     </div>
                     <button class="bg-red-900 text-white rounded-lg w-full mt-2" (click)="modal.toggle()">ver mais</button>
-                    <app-carro #modal>
-                        {{ carro.nome }} - R$ {{ carro.preco }}
+                    <app-carro #modal >
+                        <div class="inline-block w-96">
+                        <div  class="bg-red-900 w-1/2 h-44  "></div>
+                        <div class="flex items-center mt-3 border-1 rounded-lg border-black">
+                            <h2 class="font-extrabold text-red-900 text-lg      "> Valor:</h2> <h2 class="mt-1">{{carro.preco | currency: 'BRL'}}</h2> 
+                        </div>
+                        <div class="flex items-center mt-3 ">
+                            <h2 class="font-extrabold text-red-900 text-lg "> IPVA:</h2> <h2 class="mt-1">{{carro.ipva | currency: 'BRL'}}</h2> 
+                        </div>
+                        <div class="flex items-center mt-3">
+                            <h2 class="font-extrabold text-red-900 text-lg "> Categoria:</h2> <h2 class="mt-1">{{carro.categoria}}</h2> 
+                        </div>
+                    </div>
+                        <!-- {{ carro.nome }} - R$ {{ carro.preco }}
                         {{carro.combustivel}} {{carro.ipva}}
                         {{carro.categoria}}{{carro.lugares}} 
                         {{carro.tracao}}{{carro.cambio}}
-                        {{carro.consumoUrbano}}{{carro.consumoRodoviario}}
+                        {{carro.consumoUrbano}}{{carro.consumoRodoviario}} -->
                     </app-carro> 
                 </div>
             </div>
