@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 interface Carro{
   nome: string
+  ano: number;
   marca: string
   preco: number
   combustivel: string
@@ -21,6 +22,7 @@ export class CarroComponent implements OnInit {
    carros: Carro[] = [
     {
       nome: ' Onix LT 1.0 Turbo',
+      ano: 2023,
       marca: 'Chevrolet',
       preco: 82424,
       combustivel: 'Flex',
@@ -34,6 +36,7 @@ export class CarroComponent implements OnInit {
     },
     {
       nome: ' Cruze LT 1.4 Turbo',
+      ano: 2023,
       marca: 'Fiat',
       preco: 142665 ,
       combustivel: 'Flex',
@@ -47,6 +50,7 @@ export class CarroComponent implements OnInit {
     },
     {
       nome: ' Tracker AT 1.0',
+      ano: 2023,
       marca: 'Chevrolet',
       preco: 113267,
       combustivel: 'Flex',
@@ -74,6 +78,7 @@ export class CarroComponent implements OnInit {
   adicionarCarro() {
     const novoCarro: Carro = {
       nome: ' Tracker AT 1.0',
+      ano: 2023,
       marca: 'Chevrolet', 
       preco: 113267,
       combustivel: 'Flex',
