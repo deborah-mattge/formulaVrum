@@ -25,7 +25,7 @@ export class CarroComponent implements OnInit {
       nome: ' Onix LT 1.0 Turbo',
       ano: 2023,
       marca: 'Chevrolet',
-      preco: 82424,
+      preco: 69000,
       combustivel: 'Flex',
       ipva: 3297,
       categoria: 'Hatch',

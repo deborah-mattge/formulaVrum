@@ -8,12 +8,14 @@ import { CarroModule } from './carro/carro.module';
 import { NavComponent } from './nav/nav.component';
 import { NavModule } from './nav/nav.module';
 import { FormsModule } from '@angular/forms';
+import { PrimeiroCarroComponent } from './primeiro-carro/primeiro-carro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    TelaInicialComponent
+    TelaInicialComponent,
+    PrimeiroCarroComponent
     
   ],
   imports: [
