@@ -1,56 +1,6 @@
+.sombra{
 
-imgCarro{
-    width: 40rem;
-}
-#container-img{
-    background-color: #242424;
-}
-#geral{
-    background-color: #F2F2F2;
-}
-.marcas{
-    margin: auto;
-    width: 80%;
-    padding: 1%;
-}
-.imagem-marca{
-    height: 90px;
-    width: 160px;
-    background-color: white;
-    border: rgb(221, 221, 221) solid 2px;
-    box-shadow: 0px 4px 5px rgb(112, 112, 112);
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    
-}
-.logo-marcas{
-    justify-content: space-between;
-    display: flex;
-    margin-top: 20px;
-}
-
-.container-filtro{
-    background-color: #ccc;
-    border-radius: 15px;
-    padding: 1%;
-    width: 15%;
-    margin-left: 144px;
-    margin-top: 2%;
-}
-.container-filtro h2, ul{
-    color: #242424;
-}
-.container-filtro h3{
-    color: #7b0404;
-    margin-top: 10px;
-}
-.container-filtro label{
-    display: block;
-    flex-direction: column;
-    padding: 2%;
-}
-.container-lista-carro{
-    width: 75%;
-    background-color: #ccc;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
 }
