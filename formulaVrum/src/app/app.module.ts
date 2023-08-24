@@ -9,13 +9,15 @@ import { NavComponent } from './nav/nav.component';
 import { NavModule } from './nav/nav.module';
 import { FormsModule } from '@angular/forms';
 import { PrimeiroCarroComponent } from './primeiro-carro/primeiro-carro.component';
+import { ComparacaoComponent } from './comparacao/comparacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     TelaInicialComponent,
-    PrimeiroCarroComponent
+    PrimeiroCarroComponent,
+    ComparacaoComponent
     
   ],
   imports: [

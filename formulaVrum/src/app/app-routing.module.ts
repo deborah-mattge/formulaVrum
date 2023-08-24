@@ -6,6 +6,7 @@ import { PrimeiroCarroComponent } from './primeiro-carro/primeiro-carro.componen
 import { ComparacaoComponent } from './comparacao/comparacao.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/tela-inicial', pathMatch: 'full' },
   { path: 'tela-inicial', component: TelaInicialComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'primeiro-carro', component:PrimeiroCarroComponent },
   { path: 'carro', component:CarroComponent },
   { path: 'comparacao', component:ComparacaoComponent },
+
 
 
 

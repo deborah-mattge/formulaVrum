@@ -1,11 +1,27 @@
+<input
+  type="text"
+  class="border rounded p-2 w-full"
+  placeholder="Buscar carros"
+  [(ngModel)]="termoBusca"
+/>
+<button (click)="procurar()">procurar</button>
 
 <input
-        type="text"
-        class="border rounded p-2 w-full"
-        placeholder="Buscar carros"
-       value="termoBusca" (change)="procurar()">
-       <div>
-        <div *ngFor="let carro of carros">
-            <p></p>{{carro.nome}}
-        </div>
-       </div>
+  type="text"
+  class="border rounded p-2 w-full"
+  placeholder="Buscar carros"
+  [(ngModel)]="termoBusca2"
+/>
+<button (click)="procurar()">procurar</button>
+<div >
+  <div *ngFor="let carro of carrosBusca" >
+    <div>
+      <p>{{ carro.nome }}</p>
+    </div>
+  </div>
+  <div *ngFor="let carro of carrosBusca2" >
+    <div>
+      <p>{{ carro.nome }}</p>
+    </div>
+  </div>
+</div>
