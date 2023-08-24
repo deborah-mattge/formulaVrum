@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="">
     <div id="geral" class="flex flex-col gap-8">
-      <img [src]="'/assets/logo.png'" class="shadow-xl" />
-      <h1 class="px-8 font-extrabold text-[#7B0404]">Principais Marcas</h1>
+      <div class="flex justify-center bg-[#242424] w-screen">
 
+          <img [src]="'/assets/logo.png'" class="shadow-xl " />
+      </div>
       <!-- container Marcas -->
-      <div class="flex gap-5 w-screen justify-center overflow-clip px-6">
+      <h1 class=" font-extrabold px-8 text-[#7B0404] s1900:px-28 s1900:text-3xl">Principais Marcas</h1>
+      <div class="flex gap-5 w-screen justify-center overflow-clip px-6 s900:px-10">
+        
         <!-- height: 90px;
     width: 160px;
     background-color: white;
@@ -22,39 +25,39 @@
     justify-content: center; -->
 
         <!-- container overflow  -->
-        <div class="overflow-x-auto w-screen flex gap-5 h-24 items-center">
+        <div class="overflow-x-auto w-screen justify-center flex gap-5 h-24 items-center">
           <div
-            class="flex-shrink-0 w-1/3 h-20 rounded-lg sombra p-4 flex items-center justify-center"
+            class="flex-shrink-0 w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] h-20 rounded-lg sombra p-4 flex items-center justify-center"
             (click)="marcas('Volkswagen')"
           >
             <img class="w-15 h-10" [src]="'/assets/volks.png'" />
           </div>
           <div
-            class="w-1/3 flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Chevrolet')"
           >
             <img class="w-15 h-10" [src]="'/assets/Chevrolet.png'" />
           </div>
           <div
-            class="w-1/3 flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Ford')"
           >
             <img class="w-15 h-10" [src]="'/assets/ford.png'" />
           </div>
           <div
-            class="w-1/3 flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Fiat')"
           >
             <img class="w-15 h-10" [src]="'/assets/fiat.png'" />
           </div>
           <div
-            class="w-1/3 flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Renault')"
           >
             <img class="w-15 h-10" [src]="'/assets/renault.png'" />
           </div>
           <div
-            class="w-1/3 flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Hyundai')"
           >
             <img class="w-15 h-10" [src]="'/assets/hyundai.png'" />
@@ -64,10 +67,10 @@
 
       <div>
         <!-- Filtros Mobile  -->
-        <div class="px-8 py-2">
-          <div class="flex gap-2">
-            <h2 (click)="filtroMobile()" class="font-bold">Filtros</h2>
-            <img src="/assets/filter.svg" alt="" />
+        <div class="px-8 py-2 s900:hidden">
+          <div class="flex gap-2 s650: items-center">
+            <h2 (click)="filtroMobile()" class="font-bold text-[5vw] s650:text-xl s900:text-2xl">Filtros</h2>
+            <img src="/assets/filter.svg" alt=""/>
           </div>
           <div *ngIf="mostraFiltros">
             <label *ngFor="let categoria of categorias">
@@ -82,36 +85,41 @@
         </div>
 
         <!-- Filtros desktop -->
-        <div class="hidden lg:flex">
-          <h2>Filtros</h2>
-          <h3>Categorias</h3>
-          <label *ngFor="let categoria of categorias">
-            <input
-              type="checkbox"
-              [(ngModel)]="categoria.checked"
-              (change)="aplicarFiltros()"
-            />
-            <span>{{ categoria.label }}</span>
-          </label>
 
-          <h3>Valor</h3>
-          <label *ngFor="let valor of valores">
-            <input
-              type="checkbox"
-              [(ngModel)]="valor.checked"
-              (change)="aplicarFiltros()"
-            />
-            <span>{{ valor.label }}</span>
-          </label>
-        </div>
 
-        <div>
-          <div>
+        <div class="s900:w-screen justify-center s900:flex">
+          <div class="hidden s900:flex s900:flex-col s900:w-[200px] p-4 ml-6 bg-zinc-300 rounded-lg">
+            <div class="flex gap-4">
+              <h2 class="font-bold">Filtros</h2>
+              <img src="/assets/filter.svg" alt="" />
+            </div>
+            <br>
+            <h3>Categorias</h3>
+            <label *ngFor="let categoria of categorias">
+              <input
+                type="checkbox"
+                [(ngModel)]="categoria.checked"
+                (change)="aplicarFiltros()"
+              />
+              <span>{{ categoria.label }}</span>
+            </label>
+  
+            <!-- <h3>Valor</h3>
+            <label *ngFor="let valor of valores">
+              <input
+                type="checkbox"
+                [(ngModel)]="valor.checked"
+                (change)="aplicarFiltros()"
+              />
+              <span>{{ valor.label }}</span>
+            </label> -->
+          </div>
+          <div class="s650:flex s650:flex-wrap w-screen s900:w-3/4 justify-center s900:ml-6">
             <div
-              class="w-screen flex justify-center"
+              class="  flex justify-center  s650:"
               *ngFor="let carro of carros"
             >
-              <div
+              <div class="s650:flex-wrap s650:w-[50vw] s900:w-[36vw] s1300:w-[25vw] s650:px-4 s650:flex  s1900:w-[18.7vw] "
                 *ngIf="
                   (marca == carro.marca &&
                     verificaCategoria(carro.categoria)) ||
@@ -121,12 +129,12 @@
                   (marca == '' && !verificaFiltroCategoriaSelecionado())
                 "
               >
-                <div class="">
+                <div class=" s650:w-full flex justify-center">
                   <!-- card Carro -->
                   <div
-                    class="w-[340px] h-max p-5 flex flex-col items-start rounded-2xl gap-1 sombra mb-6"
+                    class="w-[90%] s650:w-full h-max p-5 flex flex-col items-start rounded-2xl gap-1 sombra mb-6"
                   >
-                    <img [src]="carro.imagem" class="w-[300px] rounded-xl" />
+                    <img [src]="carro.imagem" class="w-[100%] rounded-xl" />
 
                     <!-- Marca e nome -->
                     <div class="flex gap-4 py-2">
@@ -252,9 +260,9 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>
