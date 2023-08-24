@@ -1,92 +1,63 @@
-<div>
-<div class="flex justify-center w-full bg-[#242424]" id="container-img">
-  <img [src]="'/assets/logo.png'" class="w-1/2 h-full" />
+<div class="flex justify-center bg-[#242424] w-screen">
+  <img [src]="'/assets/logo.png'" class="shadow-xl" />
 </div>
-<div class="flex flex-col " >
-  <div> <h2 class="text-5xl ml-11 mt-5 font-bold text-rose-900">Encontre o seu primeiro carro: </h2></div>
-  <div class=" justify-center">
-    <div *ngFor="let carro of carrosPrimeiroCarro" class="m-10 w-[1000px] p-5 border-2 border-slate-200 rounded-3xl ">
-        <div class="flex " >
-            <div class="inline-block w-96">
-              <div class=" w-auto h-48 m-5 ml-0"><img [src]="carro.imagem" class="w-full h-full" /></div>
-              <div
-                class="flex items-center mt-3 border-1 rounded-lg border-black"
-              >
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Valor:
-                </h2>
-                <h2 class="mt-1 ml-2">
-                  {{ carro.preco | currency : "BRL" }}
-                </h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  IPVA:
-                </h2>
-                <h2 class="mt-1 ml-2">
-                  {{ carro.ipva | currency : "BRL" }}
-                </h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Categoria:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.categoria }}</h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Câmbio:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.cambio }}</h2>
-              </div>
-            </div>
-            <div class="inline-block w-96">
-              <div
-                class="flex items-center mt-3 border-1 rounded-lg border-black"
-              >
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Ano:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.ano }}</h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Lugares:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.lugares }}</h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Tração:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.categoria }}</h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Combustivel:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.combustivel }}</h2>
-              </div>
-              <div class="flex items-center mt-3">
-                <h2 class="font-extrabold text-red-900 text-lg">
-                  Consumo Urbano:
-                </h2>
-                <h2 class="mt-1 ml-2">{{ carro.consumoUrbano }}</h2>
-              </div>
-              <div class="mt-3">
-                <h2
-                  class="font-extrabold text-red-900 text-lg w-auto"
-                >
-                  Consumo Rodoviário:
-                </h2>
-                <h2 class="mt-1 ml-2">
-                  {{ carro.consumoRodoviario }}
-                </h2>
-              </div>
-            </div>
-          </div>
 
+<h1 class="font-bold text-[#7B0404] p-5 s1400:px-40 s1400:text-2xl s1900:px-80">Encontre o seu primeiro carro:</h1>
+
+<div class=" flex flex-col items-center w-screen" *ngFor="let carro of carrosPrimeiroCarro">
+
+
+  <!-- container carros -->
+  <div class="w-[90%] flex-col flex px-4 s600:px-4  py-4 rounded-lg s1900:w-[60%] border-black border s1400:w-[80%]">
+<div class="flex-col s600:flex-row flex s600:gap-4">
+
+
+
+    <div class="flex flex-col w-full s600:w-1/3 s800:w-2/4 s1400:w-2/5">
+      <img [src]="carro.imagem" class="rounded-lg pt-1"/>
+      <p class="font-bold w-full text-center p-1">ONIX 2014</p>
+    </div>
+
+    <div class="flex w-full s600:w-2/3">
+          <!-- left stats -->
+      <div class="w-1/2 flex-col flex s600:gap-2 s800:gap-4 s1200:gap-7 ">
+        <p class="text-base"><b class=" text-[#7B0404]">Valor:</b> {{ carro.preco | currency : "BRL" }}</p>
+        <p class="text-base"><b class=" text-[#7B0404]">Categoria:</b> {{ carro.categoria }}</p>
+        <p class="text-base"><b class=" text-[#7B0404]"> Ano:</b> {{ carro.ano }}</p>
+        <p class="text-base"><b class=" text-[#7B0404]"> Tração:</b> {{ carro.categoria }}</p>
+        <div class="flex flex-col s600:hidden s800:flex">
+          <p class="text-base"><b class=" text-[#7B0404]">Consumo Urbano:</b></p>
+          <p class="text-sm p-1">{{ carro.consumoUrbano }}</p>
+        </div>
+      </div>
+
+    <!-- right stats -->
+      <div class="w-1/2 s600:gap-2 s800:gap-4 s1200:gap-7 flex flex-col">
+        <p class="text-base"><b class=" text-[#7B0404]">IPVA:</b> {{ carro.ipva | currency : "BRL" }}</p>
+        <p class="text-base"><b class=" text-[#7B0404]">Câmbio:</b>{{ carro.cambio }}</p>
+        <p class="text-base">
+          <b class=" text-[#7B0404]"> Lugares: </b>{{ carro.lugares }}
+        </p>
+        <p class="text-base"><b class=" text-[#7B0404]">Combustivel:</b> {{ carro.combustivel }}</p>
+        <div class="flex flex-col s600:hidden s800:flex">
+        <p class="text-base"><b class=" text-[#7B0404]">Consumo Rodoviário:</b></p>
+        <p class="text-sm p-1">{{ carro.consumoRodoviario }}</p>
+      </div>
+      </div>
+    </div>
+    
+    
+    
+  </div>
+    <div class="hidden s600:flex s600:flex-col items-center s800:items-end s800:hidden">
+      <div class="flex gap-2 items-center">
+        <p class="text-base"><b class=" text-[#7B0404]">Consumo Rodoviário:</b></p>
+        <p class="text-sm p-1">{{ carro.consumoRodoviario }}</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <p class="text-base"><b class=" text-[#7B0404]">Consumo Urbano:</b></p>
+        <p class="text-sm p-1">{{ carro.consumoUrbano }}</p>
+      </div>
     </div>
   </div>
-</div>
 </div>

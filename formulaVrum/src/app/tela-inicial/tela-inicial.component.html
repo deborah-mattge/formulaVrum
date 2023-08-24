@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <div id="geral">
-      <div class="flex justify-center" id="container-img">
-        <img [src]="'/assets/logo.png'" class="w-1/2 h-full" />
-      </div>
+  <body class="">
+    <div id="geral" class="flex flex-col gap-8">
+      <div class="flex justify-center bg-[#242424] w-screen">
 
-      <div class="marcas">
-        <div class="titulo-marcas">
-          <h1 class="text-5xl m-8 font-bold text-rose-900">
-            Principais Marcas
-          </h1>
-        </div>
-        <div class="logo-marcas">
-          <!-- height: 90px;
+          <img [src]="'/assets/logo.png'" class="shadow-xl " />
+      </div>
+      <!-- container Marcas -->
+      <h1 class=" font-extrabold px-8 text-[#7B0404] s1900:px-28 s1900:text-3xl">Principais Marcas</h1>
+      <div class="flex gap-5 w-screen justify-center overflow-clip px-6 s900:px-10">
+        
+        <!-- height: 90px;
     width: 160px;
     background-color: white;
     border: rgb(221, 221, 221) solid 2px;
@@ -26,77 +23,103 @@
     border-radius: 15px;
     display: flex;
     justify-content: center; -->
+
+        <!-- container overflow  -->
+        <div class="overflow-x-auto w-screen justify-center flex gap-5 h-24 items-center">
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="flex-shrink-0 w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] h-20 rounded-lg sombra p-4 flex items-center justify-center"
             (click)="marcas('Volkswagen')"
           >
-            <img [src]="'/assets/volks.png'" class="w-1/2 h-full" />
+            <img class="w-15 h-10" [src]="'/assets/volks.png'" />
           </div>
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Chevrolet')"
           >
-            <img [src]="'/assets/Chevrolet.png'" class="w-1/2 h-full" />
+            <img class="w-15 h-10" [src]="'/assets/Chevrolet.png'" />
           </div>
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Ford')"
           >
-            <img [src]="'/assets/ford.png'" class="w-1/2 h-full" />
+            <img class="w-15 h-10" [src]="'/assets/ford.png'" />
           </div>
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Fiat')"
           >
-            <img [src]="'/assets/fiat.png'" class="w-1/2 h-full" />
+            <img class="w-15 h-10" [src]="'/assets/fiat.png'" />
           </div>
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Renault')"
           >
-            <img [src]="'/assets/renault.png'" class="w-1/2 h-4/5 mt-2" />
+            <img class="w-15 h-10" [src]="'/assets/renault.png'" />
           </div>
           <div
-            class="h-[90px] w-40 bg-white shadow-2xl rounded-2xl flex justify-center border-[rgb(221, 221, 221)]"
+            class="w-1/3 sm:w-1/4 s900:w-1/5 s1100:w-[14.4%] flex-shrink-0 h-20 rounded-lg sombra p-2 flex items-center justify-center"
             (click)="marcas('Hyundai')"
           >
-            <img [src]="'/assets/hyundai.png'" class="w-1/2 h-full" />
+            <img class="w-15 h-10" [src]="'/assets/hyundai.png'" />
           </div>
         </div>
       </div>
-      <div class="flex">
-        <div class="ml-36 w-auto bg-gray-200 p-4 rounded-2xl flex flex-col">
-          <h2 class="text-lg font-bold mb-2">Filtros</h2>
-          <h3 class="text-md font-semibold mb-1">Categorias</h3>
-          <label
-            *ngFor="let categoria of categorias"
-            class="inline-flex items-center"
-          >
-            <input
-              type="checkbox"
-              class="form-checkbox text-blue-500"
-              [(ngModel)]="categoria.checked"
-              (change)="aplicarFiltros()"
-            />
-            <span class="ml-2">{{ categoria.label }}</span>
-          </label>
 
-          <h3 class="text-md font-semibold my-1">Valor</h3>
-          <label *ngFor="let valor of valores" class="inline-flex items-center">
-            <input
-              type="checkbox"
-              class="form-checkbox text-blue-500"
-              [(ngModel)]="valor.checked"
-              (change)="aplicarFiltros()"
-            />
-            <span class="ml-2">{{ valor.label }}</span>
-          </label>
+      <div>
+        <!-- Filtros Mobile  -->
+        <div class="px-8 py-2 s900:hidden">
+          <div class="flex gap-2 s650: items-center">
+            <h2 (click)="filtroMobile()" class="font-bold text-[5vw] s650:text-xl s900:text-2xl">Filtros</h2>
+            <img src="/assets/filter.svg" alt=""/>
+          </div>
+          <div *ngIf="mostraFiltros">
+            <label *ngFor="let categoria of categorias">
+              <input
+                type="checkbox"
+                [(ngModel)]="categoria.checked"
+                (change)="aplicarFiltros()"
+              />
+              <span>{{ categoria.label }}</span>
+            </label>
+          </div>
         </div>
 
-        <div class="flex ml-10 flex-col">
-          <div class="flex flex-wrap">
-            <div *ngFor="let carro of carros" class="">
-              <div
+        <!-- Filtros desktop -->
+
+
+        <div class="s900:w-screen justify-center s900:flex">
+          <div class="hidden s900:flex s900:flex-col s900:w-[200px] p-4 ml-6 bg-zinc-300 rounded-lg">
+            <div class="flex gap-4">
+              <h2 class="font-bold">Filtros</h2>
+              <img src="/assets/filter.svg" alt="" />
+            </div>
+            <br>
+            <h3>Categorias</h3>
+            <label *ngFor="let categoria of categorias">
+              <input
+                type="checkbox"
+                [(ngModel)]="categoria.checked"
+                (change)="aplicarFiltros()"
+              />
+              <span>{{ categoria.label }}</span>
+            </label>
+  
+            <!-- <h3>Valor</h3>
+            <label *ngFor="let valor of valores">
+              <input
+                type="checkbox"
+                [(ngModel)]="valor.checked"
+                (change)="aplicarFiltros()"
+              />
+              <span>{{ valor.label }}</span>
+            </label> -->
+          </div>
+          <div class="s650:flex s650:flex-wrap w-screen s900:w-3/4 justify-center s900:ml-6">
+            <div
+              class="  flex justify-center  s650:"
+              *ngFor="let carro of carros"
+            >
+              <div class="s650:flex-wrap s650:w-[50vw] s900:w-[36vw] s1300:w-[25vw] s650:px-4 s650:flex  s1900:w-[18.7vw] "
                 *ngIf="
                   (marca == carro.marca &&
                     verificaCategoria(carro.categoria)) ||
@@ -106,39 +129,48 @@
                   (marca == '' && !verificaFiltroCategoriaSelecionado())
                 "
               >
-                <div
-                  class="bg-[#F2F2F2] rounded-lg m-5 p-3 shadow-xl w-[330px] md:w-[200px] lg:w-[190px] xl:w-[290px]"
-                >
-                  <div><img [src]="carro.imagem" class="w-full h-full" /></div>
-                  <h1 class="mt-3">{{ carro.marca }}</h1>
-                  <h1 class="font-bold text-lg">{{ carro.nome }}</h1>
+                <div class=" s650:w-full flex justify-center">
+                  <!-- card Carro -->
                   <div
-                    class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs m-1"
+                    class="w-[90%] s650:w-full h-max p-5 flex flex-col items-start rounded-2xl gap-1 sombra mb-6"
                   >
-                    <h3>{{ carro.categoria }}</h3>
+                    <img [src]="carro.imagem" class="w-[100%] rounded-xl" />
+
+                    <!-- Marca e nome -->
+                    <div class="flex gap-4 py-2">
+                      <p>{{ carro.marca }}</p>
+                      <p>-</p>
+                      <h2 class="font-bold">{{ carro.nome }}</h2>
+                    </div>
+
+                    <!-- Tags  -->
+                    <div class="flex gap-4 justify-center m-auto">
+                      <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                        {{ carro.categoria }}
+                      </p>
+                      <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                        {{ carro.combustivel }}
+                      </p>
+                      <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                        {{ carro.cambio }}
+                      </p>
+                    </div>
+
+                    <!-- Valor -->
+                    <div class="flex gap-1 items-end">
+                      <h3 class="font-bold text-[#7B0404] text-xl">Valor:</h3>
+                      <p>{{ carro.preco | currency : "BRL" }}</p>
+                    </div>
+
+                    <!-- Botão -->
+                    <button
+                      class="w-full bg-[#7B0404] text-white font-bold rounded-xl p-1"
+                      (click)="modal.toggle()"
+                    >
+                      ver mais
+                    </button>
                   </div>
-                  <div
-                    class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs m-1"
-                  >
-                    <h3>{{ carro.combustivel }}</h3>
-                  </div>
-                  <div
-                    class="bg-slate-400 rounded-lg text-center inline-block w-auto p-1 text-xs"
-                  >
-                    <h3>{{ carro.cambio }}</h3>
-                  </div>
-                  <div class="flex items-center mt-10">
-                    <h2 class="font-extrabold text-red-900 text-lg mr-1">
-                      Valor:
-                    </h2>
-                    <h2 class="mt-1">{{ carro.preco | currency : "BRL" }}</h2>
-                  </div>
-                  <button
-                    class="bg-red-900 text-white rounded-lg w-full mt-2"
-                    (click)="modal.toggle()"
-                  >
-                    ver mais
-                  </button>
+
                   <app-carro #modal>
                     <div class="flex">
                       <div class="inline-block w-96">
@@ -228,9 +260,9 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

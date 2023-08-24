@@ -20,6 +20,7 @@ export class TelaInicialComponent implements OnInit {
   carros: any[]=[]
   marca: string ='';
   filtrado: boolean=false
+  mostraFiltros: boolean = false;
   carrosFiltrados: any[]=this.carros
   categorias: CategoriaFiltro[] = [
     { label: 'Sedã', checked: false },
@@ -36,6 +37,13 @@ export class TelaInicialComponent implements OnInit {
   ];
   constructor() { }
 
+  filtroMobile(){
+if (this.mostraFiltros){
+  this.mostraFiltros = false
+} else {
+  this.mostraFiltros = true
+}
+  }
   ngOnInit(): void {
     const carrosNoLocalStorage = localStorage.getItem('carros');
     if (carrosNoLocalStorage) {
