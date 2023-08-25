@@ -1,11 +1,17 @@
-<div class="w-screen h-screen s1900:flex">
-  <div class="w-1/2 s1900:items-end s1900:flex flex-col s1900:p-4">
+
+<div class="flex justify-center">
+  <h1 class=" font-extrabold px-8 text-[#7B0404] s1300:px-28 s13  00:text-3xl s1300:text-4xl">Compare Aqui</h1>
+
+</div>
+<div class="w-screen h-screen flex flex-row justify-center">
+
+  <div class="w-1/2 s1300:items-center s1300:flex flex-col s1300:p-4">
     <div class="h-max flex items-center">
       <div class="w-[20vw] flex flex-col items-center gap-4">
-        <div class="">
+        <div class="h-max flex items-center">
           <input
             type="text"
-            class="w-[17vw] border border-r-0 rounded-s p-5 h-max"
+            class="w-[17vw] border border-neutral-400 rounded-s p-5 h-max m-5"
             placeholder="Buscar carros"
             [(ngModel)]="termoBusca"
           />
@@ -57,25 +63,66 @@
       </div>
     </div>
   </div>
-  <div class="w-1/2 s1900:justify-start s1900:flex s1900:p-4">
-    <div class="h-max flex items-center">
-      <input
-        type="text"
-        class="s1900:w-max border border-r-0 rounded-s p-5 h-max"
-        placeholder="Buscar carros"
-        [(ngModel)]="termoBusca2"
-      />
-      <button
-        class="border-l-0 rounded-e border p-5 h-max bg-[#7B0404]"
-        (click)="procurar()"
-      >
-        <img src="/assets/mdi_search.svg" alt="" />
-      </button>
-    </div>
-    <div *ngFor="let carro of carrosBusca2">
-      <div>
-        <p>{{ carro.nome }}</p>
+  <div class="w-screen h-screen flex flex-row justify-center">
+
+    <div class="w-1/2 s1300:items-center s1300:flex flex-col s1300:p-4">
+      <div class="h-max flex items-center">
+        <div class="w-[20vw] flex flex-col items-center gap-4">
+          <div class="h-max flex items-center">
+            <input
+              type="text"
+              class="w-[17vw] border border-neutral-400 rounded-s p-5 h-max m-5"
+              placeholder="Buscar carros"
+              [(ngModel)]="termoBusca2"
+            />
+            <button
+              class="w-[3vw] border-l-0 rounded-e border p-5 h-full bg-[#7B0404]"
+              (click)="procurar()"
+            >
+              <img src="/assets/mdi_search.svg" alt="" />
+            </button>
+          </div>
+          <div class="w-[90%]" *ngFor="let carro of carrosBusca2">
+            <div class="flex flex-col items-center">
+              <img [src]="carro.imagem" class="w-[100%] rounded-xl" />
+              <p>{{ carro.nome }}</p>
+              <div class="flex">
+                <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                  {{ carro.categoria }}
+                </p>
+                <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                  {{ carro.combustivel }}
+                </p>
+                <p class="p-2 rounded-lg bg-zinc-400 text-xs">
+                  {{ carro.cambio }}
+                </p>
+              </div>
+              <div
+                class="flex items-center mt-3 border-1 rounded-lg border-black"
+              >
+                <h2 class="font-extrabold text-red-900 text-lg">Valor:</h2>
+                <h2 class="mt-1 ml-2">
+                  {{ carro.preco | currency : "BRL" }}
+                </h2>
+              </div>
+              <div
+                class="flex items-center mt-3 border-1 rounded-lg border-black"
+              >
+                <h2 class="font-extrabold text-red-900 text-lg">Ano:</h2>
+                <h2 class="mt-1 ml-2">{{ carro.ano }}</h2>
+              </div>
+  
+              <div class="flex items-center mt-3">
+                <h2 class="font-extrabold text-red-900 text-lg">IPVA:</h2>
+                <h2 class="mt-1 ml-2">
+                  {{ carro.ipva | currency : "BRL" }}
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+    
+  
 </div>
